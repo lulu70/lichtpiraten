@@ -5,6 +5,7 @@ import { graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Hero from "../components/pages-components/index/Hero"
 import Artwork from "../components/pages-components/index/Artwork"
+import About from "../components/pages-components/index/About"
 
 export default function Home({ data }) {
   return (
@@ -21,6 +22,8 @@ export default function Home({ data }) {
         />
         <Hero data={data} />
         <Artwork data={data} />
+        <About data={data} />
+        zz
       </Layout>
     </>
   )
@@ -53,6 +56,9 @@ export const query = graphql`
       ...NewGatsbyImage
     }
     timeMachine: file(name: { eq: "time-machine" }) {
+      ...NewGatsbyImage
+    }
+    aboutBG: file(name: { eq: "about-bg" }) {
       ...NewGatsbyImage
     }
   }

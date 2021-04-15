@@ -7,8 +7,8 @@
 module.exports = {
   /* Your site config here */
   siteMetadata: {
-    title: `Site Name`,
-    description: `Site Description`,
+    title: `LiCHTPiRATEN`,
+    description: `LiCHT MACHT LiEBE`,
     author: `@liorcohen`,
     siteUrl: `https://www.SITE_URL.com`,
     image: "/image-name.jpg",

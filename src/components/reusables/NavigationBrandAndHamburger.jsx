@@ -2,6 +2,8 @@ import React from "react"
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import useTabIsUsed from "../../hooks/useTabIsUsed"
+import getClassNamesByTabIsUsedState from "../../helpers/getClassNamesByTabIsUsedState"
+
 const NavigationBrandAndHamburger = ({ isOpen, setIsOpen }) => {
   const tabIsUsed = useTabIsUsed()
   return (
@@ -22,9 +24,9 @@ const NavigationBrandAndHamburger = ({ isOpen, setIsOpen }) => {
       </div>
       <div id="hamburger-container" className="lg:hidden text-white">
         <button
-          className={`z-10 relative block w-8 ${
-            tabIsUsed ? "" : "focus:outline-none"
-          }`}
+          className={`z-10 relative block w-8 ${getClassNamesByTabIsUsedState(
+            tabIsUsed
+          )}`}
           aria-label="menu"
           onClick={() => {
             setIsOpen(isOpen => !isOpen)

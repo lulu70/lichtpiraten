@@ -16,6 +16,7 @@
     "deploy": "yarn build && ntl deploy --prod --message \"DEPLOYED_LOCALLY\" && ntl open"
   },
   "dependencies": {
+    "@tailwindcss/aspect-ratio": "^0.2.0",
     "autoprefixer": "^10.2.4",
     "gatsby": "^3.0.1",
     "gatsby-plugin-advanced-sitemap": "^1.6.0",
@@ -29,6 +30,7 @@
     "gatsby-plugin-styled-components": "^4.0.0",
     "gatsby-source-filesystem": "^3.0.0",
     "gatsby-transformer-sharp": "^3.0.0",
+    "gsap": "^3.6.1",
     "postcss": "^8.2.6",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",

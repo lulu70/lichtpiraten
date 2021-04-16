@@ -11,7 +11,7 @@ const About = ({ data }) => {
   return (
     <section id="about">
       <BackgroundImage
-        className="relative text-right text-gray-400 py-12 text-xl font-light bg-fixed bg-right-top bg-cover"
+        className="relative text-right text-gray-400 py-12 text-xl font-light bg-fixed bg-right-top"
         {...bgImage}
       >
         <SizeWrapper className="relative">

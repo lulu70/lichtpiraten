@@ -30,10 +30,6 @@ module.exports = {
     //     siteUrl: ``,
     //   },
     // },
-    // {
-    //   resolve: `gatsby-plugin-create-client-paths`,
-    //   // options: { prefixes: [`/products/*`, `/account/*`] },
-    // },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -44,17 +40,18 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    // {
-    //   resolve: `gatsby-plugin-manifest`,
-    //   options: {
-    //     name: `site-name`,
-    //     short_name: `site`,
-    //     start_url: `/`,
-    //     background_color: `#FFFFFF`,
-    //     theme_color: `#FFFFFF`,
-    //     display: `minimal-ui`,
-    //     // icon: ``, // This path is relative to the root of the site.
-    //   },
-    // },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `LiCHTPiRATEN`,
+        short_name: `LiCHTPiRATEN`,
+        start_url: `/`,
+        // background_color: `#FFFFFF`,
+        // theme_color: `#FFFFFF`,
+        display: `minimal-ui`,
+        icon: `static/icon.png`, // This path is relative to the root of the site.
+        theme_color_in_head: false,
+      },
+    },
   ],
 }

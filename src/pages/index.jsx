@@ -6,6 +6,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Hero from "../components/pages-components/index/Hero"
 import Artwork from "../components/pages-components/index/Artwork"
 import About from "../components/pages-components/index/About"
+import LichtPiraten from "../components/reusables/LichtPiraten"
 
 export default function Home({ data }) {
   return (
@@ -23,7 +24,7 @@ export default function Home({ data }) {
         <Hero data={data} />
         <Artwork data={data} />
         <About data={data} />
-        zz
+        <LichtPiraten data={data} />
       </Layout>
     </>
   )
@@ -59,6 +60,9 @@ export const query = graphql`
       ...NewGatsbyImage
     }
     aboutBG: file(name: { eq: "about-bg" }) {
+      ...NewGatsbyImage
+    }
+    waterBG: file(name: { eq: "water-bg" }) {
       ...NewGatsbyImage
     }
   }

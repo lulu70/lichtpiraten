@@ -22,7 +22,6 @@
     "gatsby-background-image": "^1.5.1",
     "gatsby-plugin-advanced-sitemap": "^1.6.0",
     "gatsby-plugin-canonical-urls": "^3.0.0",
-    "gatsby-plugin-create-client-paths": "^3.0.0",
     "gatsby-plugin-image": "^1.0.0",
     "gatsby-plugin-manifest": "^3.0.0",
     "gatsby-plugin-postcss": "^4.0.0",

@@ -7,6 +7,7 @@ import Hero from "../components/pages-components/index/Hero"
 import Artwork from "../components/pages-components/index/Artwork"
 import About from "../components/pages-components/index/About"
 import LichtPiraten from "../components/reusables/LichtPiraten"
+import Contact from "../components/pages-components/index/Contact"
 
 export default function Home({ data }) {
   return (
@@ -25,6 +26,7 @@ export default function Home({ data }) {
         <Artwork data={data} />
         <About data={data} />
         <LichtPiraten data={data} />
+        <Contact data={data} />
       </Layout>
     </>
   )
@@ -63,6 +65,9 @@ export const query = graphql`
       ...NewGatsbyImage
     }
     waterBG: file(name: { eq: "water-bg" }) {
+      ...NewGatsbyImage
+    }
+    contactBG: file(name: { eq: "contact-bg" }) {
       ...NewGatsbyImage
     }
   }

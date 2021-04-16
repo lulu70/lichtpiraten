@@ -5,14 +5,7 @@ import createChunks from "../../../helpers/createChunks"
 import useTabIsUsed from "../../../hooks/useTabIsUsed"
 import getClassNamesByTabIsUsedState from "../../../helpers/getClassNamesByTabIsUsedState"
 import { gsap } from "gsap"
-
-const Divider = () => (
-  <div className="flex mx-auto max-w-xl mt-4 items-center space-x-2">
-    <div className="border-t border-gray-400 flex-1"></div>
-    <div className="w-2 h-2 bg-gray-400 transform rotate-45" />
-    <div className="border-t border-gray-400 flex-1"></div>
-  </div>
-)
+import Divider from "../../reusables/Divider"
 
 const Gallery = ({ images, thumbOverlay }) => {
   const imagesRefs = images.map(() => React.createRef())

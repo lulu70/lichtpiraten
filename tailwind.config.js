@@ -1,5 +1,5 @@
 module.exports = {
-  // mode: "jit",
+  mode: "jit",
   purge: ["./src/**/*.{js,jsx,ts,tsx}"],
   darkMode: false, // or 'media' or 'class'
   theme: {
@@ -13,9 +13,10 @@ module.exports = {
     },
   },
   variants: {
-    extend: {
-      borderRadius: ["focus"],
-    },
+    extend: {},
   },
-  plugins: [require("@tailwindcss/aspect-ratio")],
+  plugins: [
+    require("@tailwindcss/aspect-ratio"),
+    require("@tailwindcss/forms"),
+  ],
 }

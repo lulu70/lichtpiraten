@@ -4,8 +4,11 @@ import SizeWrapper from "../../reusables/SizeWrapper"
 import { convertToBgImage } from "gbimage-bridge"
 import BackgroundImage from "gatsby-background-image"
 import { Link } from "gatsby"
+import useTabIsUsed from "../../../hooks/useTabIsUsed"
+import getClassNamesByTabIsUsedState from "../../../helpers/getClassNamesByTabIsUsedState"
 
 const About = ({ data }) => {
+  const tabIsUsed = useTabIsUsed()
   const image = getImage(data.aboutBG)
   const bgImage = convertToBgImage(image)
   return (
@@ -25,8 +28,18 @@ const About = ({ data }) => {
             be
           </p>
           <div className="text-accent flex flex-col items-end mt-2">
-            <Link to="/manifesto/">Manifesto</Link>
-            <Link to="/network/">Network</Link>
+            <Link
+              to="/manifesto/"
+              className={`${getClassNamesByTabIsUsedState(tabIsUsed)}`}
+            >
+              Manifesto
+            </Link>
+            <Link
+              to="/network/"
+              className={`${getClassNamesByTabIsUsedState(tabIsUsed)}`}
+            >
+              Network
+            </Link>
           </div>
         </SizeWrapper>
       </BackgroundImage>

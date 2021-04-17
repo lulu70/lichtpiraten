@@ -1,6 +1,6 @@
 import React from "react"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import SizeWrapper from "../../reusables/SizeWrapper"
+import Container from "../../reusables/Container"
 import { gsap, Linear } from "gsap"
 
 const Hero = ({ data }) => {
@@ -22,7 +22,7 @@ const Hero = ({ data }) => {
   }
   return (
     <section id="hero" className="relative">
-      <SizeWrapper className="my-96">
+      <Container className="my-96">
         <div ref={imageContainerRef}>
           <GatsbyImage
             image={getImage(data.yellowDuck)}
@@ -37,7 +37,7 @@ const Hero = ({ data }) => {
         <p className="text-right mt-4 text-xl font-light">
           # LiCHT MACHT LiEBE #
         </p>
-      </SizeWrapper>
+      </Container>
     </section>
   )
 }

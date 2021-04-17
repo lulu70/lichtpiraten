@@ -1,6 +1,6 @@
 import React from "react"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import SizeWrapper from "../../reusables/SizeWrapper"
+import Container from "../../reusables/Container"
 import Divider from "../../reusables/Divider"
 import ContactForm from "../../reusables/ContactForm"
 import Social from "../../reusables/Social"
@@ -14,7 +14,7 @@ const Contact = ({ data }) => {
         className="absolute inset-0 opacity-50"
         objectPosition="top"
       />
-      <SizeWrapper className="relative py-12 text-center">
+      <Container className="relative py-12 text-center">
         <h2 className="text-xl text-gray-400 font-light">CONTACT</h2>
         <Divider />
         <h3 className="font-bold text-7xl mt-8">SAY HELLO!</h3>
@@ -30,7 +30,7 @@ const Contact = ({ data }) => {
             <Social />
           </div>
         </div>
-      </SizeWrapper>
+      </Container>
     </section>
   )
 }

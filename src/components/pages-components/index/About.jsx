@@ -1,6 +1,6 @@
 import React from "react"
 import { getImage } from "gatsby-plugin-image"
-import SizeWrapper from "../../reusables/SizeWrapper"
+import Container from "../../reusables/Container"
 import { convertToBgImage } from "gbimage-bridge"
 import BackgroundImage from "gatsby-background-image"
 import { Link } from "gatsby"
@@ -17,7 +17,7 @@ const About = ({ data }) => {
         className="relative text-right text-gray-400 py-12 text-xl font-light bg-fixed bg-right-top"
         {...bgImage}
       >
-        <SizeWrapper className="relative">
+        <Container className="relative">
           <h2>ABOUT</h2>
           <p className="max-w-4xl ml-auto text-white mt-4">
             welcome into the world of shadow and light we create new rooms,
@@ -41,7 +41,7 @@ const About = ({ data }) => {
               Network
             </Link>
           </div>
-        </SizeWrapper>
+        </Container>
       </BackgroundImage>
     </section>
   )

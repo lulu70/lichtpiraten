@@ -1,9 +1,9 @@
 import React from "react"
 
-const SizeWrapper = ({ children, className }) => {
+const Container = ({ children, className }) => {
   return (
     <div className={`max-w-7xl mx-auto px-4  ${className}`}>{children}</div>
   )
 }
 
-export default SizeWrapper
+export default Container

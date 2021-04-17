@@ -1,6 +1,6 @@
 import React from "react"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import SizeWrapper from "../../reusables/SizeWrapper"
+import Container from "../../reusables/Container"
 import createChunks from "../../../helpers/createChunks"
 import useTabIsUsed from "../../../hooks/useTabIsUsed"
 import getClassNamesByTabIsUsedState from "../../../helpers/getClassNamesByTabIsUsedState"
@@ -98,7 +98,7 @@ const Artwork = ({ data }) => {
   const isLastImage = currentGalleryIndex === galleriesImages.length - 1
   return (
     <section id="ARTWORKS" className="relative bg-black text-gray-400 py-12">
-      <SizeWrapper>
+      <Container>
         <h2 className="text-xl text-center">ARTWORKS</h2>
         <Divider />
         <p className="mt-4 text-center font-light text-xl">
@@ -145,7 +145,7 @@ const Artwork = ({ data }) => {
             {">>"}
           </button>
         </div>
-      </SizeWrapper>
+      </Container>
     </section>
   )
 }

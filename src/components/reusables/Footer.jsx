@@ -2,8 +2,8 @@ import React from "react"
 import { graphql, Link, useStaticQuery } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { useLocation } from "@reach/router"
+import Container from "./Container"
 
-import SizeWrapper from "./SizeWrapper"
 const Footer = () => {
   const { yellowDuck } = useStaticQuery(
     graphql`
@@ -64,7 +64,7 @@ const Footer = () => {
   }
   return (
     <footer className="mt-auto pb-5 relative bg-black py-8 text-center text-gray-400">
-      <SizeWrapper>
+      <Container>
         <div className="flex items-center">
           <div className="w-5/12 border-t border-gray-400" />
           <div className="w-2/12 flex">
@@ -77,7 +77,7 @@ const Footer = () => {
           <div className="w-5/12 border-t border-gray-400" />
         </div>
         {messages[location.pathname]}
-      </SizeWrapper>
+      </Container>
     </footer>
   )
 }

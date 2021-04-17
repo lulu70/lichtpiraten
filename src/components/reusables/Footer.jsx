@@ -1,48 +1,83 @@
 import React from "react"
-import { Link } from "gatsby"
+import { graphql, Link, useStaticQuery } from "gatsby"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { useLocation } from "@reach/router"
 
+import SizeWrapper from "./SizeWrapper"
 const Footer = () => {
-  const links = [
-    {
-      id: 0,
-      text: "Home",
-      slug: "/",
-    },
-    {
-      id: 1,
-      text: "Second Page",
-      slug: "/second-page",
-    },
-    {
-      id: 2,
-      text: "Third Page",
-      slug: "/third-page",
-    },
-    {
-      id: 3,
-      text: "Forth Page",
-      slug: "/forth-page",
-    },
-    {
-      id: 4,
-      text: "Privacy Policy",
-      slug: "/policies/privacy-policy/",
-    },
-  ]
+  const { yellowDuck } = useStaticQuery(
+    graphql`
+      {
+        yellowDuck: file(name: { eq: "yellow-duck" }) {
+          ...NewGatsbyImage
+        }
+      }
+    `
+  )
+  const location = useLocation()
+  const messages = {
+    "/": (
+      <p className="text-xs mt-4">
+        This website uses cookies. You can read more on our{" "}
+        <Link to="/imprint/" className="text-accent">
+          imprint
+        </Link>{" "}
+        or our{" "}
+        <Link to="/privacy-statement/" className="text-accent">
+          privacy statement
+        </Link>
+      </p>
+    ),
+    "/privacy-statement/": (
+      <p className="text-xs mt-4">
+        This website uses cookies. You are reading our privacy statement, go
+        back{" "}
+        <Link to="/" className="text-accent">
+          here
+        </Link>{" "}
+      </p>
+    ),
+    "/imprint/": (
+      <p className="text-xs mt-4">
+        This website uses cookies. You are reading our imprint, go back{" "}
+        <Link to="/" className="text-accent">
+          here
+        </Link>{" "}
+      </p>
+    ),
+    "/manifesto/": (
+      <p className="text-xs mt-4">
+        This website uses cookies. You are reading our manifesto, go back{" "}
+        <Link to="/" className="text-accent">
+          here
+        </Link>{" "}
+      </p>
+    ),
+    "/network/": (
+      <p className="text-xs mt-4">
+        This website uses cookies. You are reading our network, go back{" "}
+        <Link to="/" className="text-accent">
+          here
+        </Link>{" "}
+      </p>
+    ),
+  }
   return (
-    <footer className="mt-auto pb-5">
-      <div className="w-5/6 lg:w-2/3 text-center mx-auto">
-        <nav className="flex flex-col lg:flex-row items-center mx-auto text-sm border-t border-b py-3 lg:space-x-5">
-          {links.map(link => (
-            <Link key={link.id} className="text-gray-500" to={link.slug}>
-              {link.text}
-            </Link>
-          ))}
-        </nav>
-        <div className="text-gray-500 mt-3">
-          © 2020 Lior Cohen All rights reserved
+    <footer className="mt-auto pb-5 relative bg-black py-8 text-center text-gray-400">
+      <SizeWrapper>
+        <div className="flex items-center">
+          <div className="w-5/12 border-t border-gray-400" />
+          <div className="w-2/12 flex">
+            <GatsbyImage
+              image={getImage(yellowDuck)}
+              alt={yellowDuck.name}
+              className="w-7 mx-auto"
+            />
+          </div>
+          <div className="w-5/12 border-t border-gray-400" />
         </div>
-      </div>
+        {messages[location.pathname]}
+      </SizeWrapper>
     </footer>
   )
 }

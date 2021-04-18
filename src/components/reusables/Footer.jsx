@@ -23,12 +23,12 @@ const Footer = () => {
           imprint
         </Link>{" "}
         or our{" "}
-        <Link to="/privacy-statement/" className="text-accent">
+        <Link to="/privacy/" className="text-accent">
           privacy statement
         </Link>
       </p>
     ),
-    "/privacy-statement/": (
+    "/privacy/": (
       <p className="text-xs mt-4">
         This website uses cookies. You are reading our privacy statement, go
         back{" "}

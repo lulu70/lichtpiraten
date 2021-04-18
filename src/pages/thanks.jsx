@@ -12,8 +12,8 @@ export default function Home({ data }) {
       <Layout>
         <GatsbyImage
           id="bg-image"
-          image={getImage(data.duckOnBuilding)}
-          alt="duck-on-building"
+          image={getImage(data.bgImage.image.localFile)}
+          alt={data.bgImage.title}
           className="w-full fixed inset-0"
           objectFit="cover"
           objectPosition="left"
@@ -31,8 +31,11 @@ export default function Home({ data }) {
 
 export const query = graphql`
   {
-    duckOnBuilding: file(name: { eq: "duck-on-building" }) {
-      ...NewGatsbyImage
+    bgImage: contentfulBackgroundImage {
+      title
+      image {
+        ...ContentfulImage
+      }
     }
   }
 `

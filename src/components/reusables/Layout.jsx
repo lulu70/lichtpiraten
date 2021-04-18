@@ -1,7 +1,6 @@
 import React from "react"
 import ScrollTopButton from "./ScrollTopButton.jsx"
 import Footer from "./Footer.jsx"
-// import CookieConsent from "./CookieConsent"
 
 const Layout = ({ children }) => {
   return (
@@ -11,7 +10,6 @@ const Layout = ({ children }) => {
     >
       <main className="container-fluid">{children}</main>
       <Footer />
-      {/* <CookieConsent /> */}
       <ScrollTopButton />
     </div>
   )

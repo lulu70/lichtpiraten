@@ -50,7 +50,7 @@ const Social = () => {
               <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
             </svg>
           </a>
-          Based in Berlin
+          General Enquiries
         </li>
       </ul>
       <h4 className="text-xl font-light mt-24">GET SOCIAL</h4>

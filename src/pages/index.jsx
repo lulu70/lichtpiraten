@@ -10,14 +10,15 @@ import LichtPiraten from "../components/reusables/LichtPiraten"
 import Contact from "../components/pages-components/index/Contact"
 
 export default function Home({ data }) {
+  const { bgImage } = data
   return (
     <>
       <SEO title="Home" />
       <Layout>
         <GatsbyImage
           id="bg-image"
-          image={getImage(data.duckOnBuilding)}
-          alt="duck-on-building"
+          image={getImage(bgImage.image.localFile)}
+          alt={bgImage.image.title}
           className="w-full fixed inset-0"
           objectFit="cover"
           objectPosition="left"
@@ -34,41 +35,51 @@ export default function Home({ data }) {
 
 export const query = graphql`
   {
-    yellowDuck: file(name: { eq: "yellow-duck" }) {
-      ...NewGatsbyImage
+    bgImage: contentfulBackgroundImage {
+      title
+      image {
+        ...ContentfulImage
+      }
     }
-    duckOnBuilding: file(name: { eq: "duck-on-building" }) {
-      ...NewGatsbyImage
+    heroSection: contentfulHeroSection {
+      title
+      subtitle
+      icon {
+        ...ContentfulImage
+      }
     }
-    thumbOverlay: file(name: { eq: "thumb_overlay" }) {
-      ...NewGatsbyImage
+    artworksSection: contentfulArtworksSection {
+      title
+      subtitle
+      overlayImage {
+        ...ContentfulImage
+      }
+      images {
+        ...ContentfulImage
+      }
     }
-    katerHolzig: file(name: { eq: "kater-holzig" }) {
-      ...NewGatsbyImage
+    aboutSection: contentfulAboutSection {
+      title
+      body {
+        raw
+      }
+      backgroundImage {
+        ...ContentfulImage
+      }
     }
-    teufelsbergFulldomeShow: file(name: { eq: "teufelsberg-fulldome-show" }) {
-      ...NewGatsbyImage
+    lichtpiratenSection: contentfulLichtpiratenSection {
+      text
+      backgroundImage {
+        ...ContentfulImage
+      }
     }
-    verzauberung: file(name: { eq: "verzauberung" }) {
-      ...NewGatsbyImage
-    }
-    furImmerImNebel: file(name: { eq: "für-immer-im-nebel" }) {
-      ...NewGatsbyImage
-    }
-    random30C3Hamburg2013: file(name: { eq: "random-30c3-hamburg-2013" }) {
-      ...NewGatsbyImage
-    }
-    timeMachine: file(name: { eq: "time-machine" }) {
-      ...NewGatsbyImage
-    }
-    aboutBG: file(name: { eq: "about-bg" }) {
-      ...NewGatsbyImage
-    }
-    waterBG: file(name: { eq: "water-bg" }) {
-      ...NewGatsbyImage
-    }
-    contactBG: file(name: { eq: "contact-bg" }) {
-      ...NewGatsbyImage
+    contactSection: contentfulContactSection {
+      subtitle
+      title
+      cta
+      backgroundImage {
+        ...ContentfulImage
+      }
     }
   }
 `

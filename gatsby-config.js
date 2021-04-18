@@ -1,9 +1,27 @@
-/**
- * Configure your Gatsby site with this file.
- *
- * See: https://www.gatsbyjs.com/docs/gatsby-config/
- */
+require("dotenv").config()
 
+const contentfulConfig = {
+  spaceId: process.env.CONTENTFUL_SPACE_ID,
+  accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+  downloadLocal: true,
+}
+
+// If you want to use the preview API please define
+// CONTENTFUL_HOST and CONTENTFUL_PREVIEW_ACCESS_TOKEN in your
+// environment config.
+//
+// CONTENTFUL_HOST should map to `preview.contentful.com`
+// CONTENTFUL_PREVIEW_ACCESS_TOKEN should map to your
+// Content Preview API token
+//
+// For more information around the Preview API check out the documentation at
+// https://www.contentful.com/developers/docs/references/content-preview-api/#/reference/spaces/space/get-a-space/console/js
+//
+// To change back to the normal CDA, remove the CONTENTFUL_HOST variable from your environment.
+if (process.env.CONTENTFUL_HOST) {
+  contentfulConfig.host = process.env.CONTENTFUL_HOST
+  contentfulConfig.accessToken = process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN
+}
 module.exports = {
   /* Your site config here */
   siteMetadata: {
@@ -14,6 +32,10 @@ module.exports = {
     image: "/image-name.jpg",
   },
   plugins: [
+    {
+      resolve: `gatsby-source-contentful`,
+      options: contentfulConfig,
+    },
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-image`,
     {

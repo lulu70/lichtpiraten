@@ -31,8 +31,8 @@ const About = ({ data }) => {
   return (
     <section id="about">
       <BackgroundImage
-        className="relative text-right text-gray-400 py-12 text-xl font-light bg-fixed bg-right-top"
         {...bgImage}
+        className="relative text-right text-gray-400 py-12 text-xl font-light bg-fixed bg-right-top"
       >
         <Container className="relative">
           <h2>{title}</h2>

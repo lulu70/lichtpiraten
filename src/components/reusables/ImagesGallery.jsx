@@ -19,16 +19,19 @@ const ImagesGallery = ({ images, overlayImage }) => {
     <div className="mt-8 flex flex-wrap justify-between -mr-8">
       {images.map((image, index) => (
         <div key={image.id} className="w-1/2 lg:w-1/3">
-          <div className="mr-8 mb-8 aspect-w-16 aspect-h-9 overflow-hidden relative">
+          <div
+            onPointerEnter={() => enterOverlay({ index })}
+            onPointerLeave={() => exitOverlay({ index })}
+            className="mr-8 mb-8 overflow-hidden relative"
+          >
             <GatsbyImage
-              onPointerEnter={() => enterOverlay({ index })}
-              onPointerLeave={() => exitOverlay({ index })}
               image={getImage(image.localFile)}
               alt={image.title}
+              className="pointer-events-none"
             />
             <div
               ref={imagesRefs[index]}
-              className="flex justify-center transform -translate-x-full pointer-events-none"
+              className="flex justify-center transform -translate-x-full pointer-events-none absolute inset-0"
             >
               <GatsbyImage
                 image={getImage(overlayImage.localFile)}

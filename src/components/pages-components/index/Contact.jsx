@@ -9,12 +9,13 @@ const Contact = ({ data }) => {
   const { title, subtitle, cta, backgroundImage } = data.contactSection
   return (
     <section id="contact" className="relative bg-black">
-      <GatsbyImage
-        image={getImage(backgroundImage.localFile)}
-        alt={backgroundImage.title}
-        className="absolute inset-0 opacity-50"
-        objectPosition="top"
-      />
+      <div className="absolute inset-0 opacity-50">
+        <GatsbyImage
+          image={getImage(backgroundImage.localFile)}
+          alt={backgroundImage.title}
+          objectPosition="top"
+        />
+      </div>
       <Container className="relative py-12 text-center">
         <h2 className="text-xl text-gray-400 font-light">{title}</h2>
         <Divider />

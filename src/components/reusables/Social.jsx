@@ -1,5 +1,5 @@
 import React from "react"
-import TweeterIcon from "../reusables/TweeterIcon"
+import TwitterIcon from "../reusables/TwitterIcon"
 import FacebookIcon from "../reusables/FacebookIcon"
 import YoutubeIcon from "./YoutubeIcon"
 import useTabIsUsed from "../../hooks/useTabIsUsed"
@@ -16,6 +16,7 @@ const Social = () => {
             href="https://www.google.com/maps/place/Berlin/"
             target="_blank"
             rel="noreferrer"
+            aria-label="based in berlin"
             className={`mr-4 ${getClassNamesByTabIsUsedState(tabIsUsed)}`}
           >
             <svg
@@ -38,6 +39,7 @@ const Social = () => {
             href="mailto:enter@lichtpiraten.net"
             target="_blank"
             rel="noreferrer"
+            aria-label="General Enquiries"
             className={`mr-4 ${getClassNamesByTabIsUsedState(tabIsUsed)}`}
           >
             <svg
@@ -60,9 +62,10 @@ const Social = () => {
             href="https://twitter.com/lichtpiraten/"
             target="_blank"
             rel="noreferrer"
+            aria-label="Twitter"
             className={`block ${getClassNamesByTabIsUsedState(tabIsUsed)}`}
           >
-            <TweeterIcon className="w-5" />
+            <TwitterIcon className="w-5" />
           </a>
         </li>
         <li className="border px-2 pt-1">
@@ -70,6 +73,7 @@ const Social = () => {
             href="https://www.facebook.com/lichtpiraten/"
             target="_blank"
             rel="noreferrer"
+            aria-label="Facebook"
             className={`block ${getClassNamesByTabIsUsedState(tabIsUsed)}`}
           >
             <FacebookIcon className="w-5" />
@@ -80,6 +84,7 @@ const Social = () => {
             href="https://www.youtube.com/user/LICHTPIRATEN/"
             target="_blank"
             rel="noreferrer"
+            aria-label="You Tube"
             className={`block ${getClassNamesByTabIsUsedState(tabIsUsed)}`}
           >
             <YoutubeIcon className="w-5" />

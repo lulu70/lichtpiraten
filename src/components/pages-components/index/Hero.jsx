@@ -24,12 +24,14 @@ const Hero = ({ data }) => {
   return (
     <section id="hero" className="relative">
       <Container className="my-96">
-        <div ref={imageContainerRef}>
+        <div
+          ref={imageContainerRef}
+          className="mx-auto w-36 relative"
+          onPointerEnter={spin}
+        >
           <GatsbyImage
             image={getImage(heroSection.icon.localFile)}
             alt={heroSection.icon.title}
-            className="mx-auto block w-36"
-            onPointerEnter={spin}
           />
         </div>
         <h1 className="text-7xl text-right font-bold mt-12 block">

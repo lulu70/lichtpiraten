@@ -15,14 +15,16 @@ export default function Home({ data }) {
     <>
       <SEO title="Home" />
       <Layout>
-        <GatsbyImage
-          id="bg-image"
-          image={getImage(bgImage.image.localFile)}
-          alt={bgImage.image.title}
-          className="w-full fixed inset-0"
-          objectFit="cover"
-          objectPosition="left"
-        />
+        <div className="w-full fixed inset-0">
+          <GatsbyImage
+            id="bg-image"
+            image={getImage(bgImage.image.localFile)}
+            alt={bgImage.image.title}
+            objectFit="cover"
+            objectPosition="left"
+            className="w-full"
+          />
+        </div>
         <Hero data={data} />
         <Artwork data={data} />
         <About data={data} />
@@ -52,10 +54,10 @@ export const query = graphql`
       title
       subtitle
       overlayImage {
-        ...ContentfulImage
+        ...ContentfulImage_16_9
       }
       images {
-        ...ContentfulImage
+        ...ContentfulImage_16_9
       }
     }
     aboutSection: contentfulAboutSection {

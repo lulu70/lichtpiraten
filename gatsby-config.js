@@ -32,6 +32,7 @@ module.exports = {
     image: "/image-name.jpg",
   },
   plugins: [
+    `gatsby-plugin-gatsby-cloud`,
     {
       resolve: `gatsby-source-contentful`,
       options: contentfulConfig,
@@ -77,6 +78,6 @@ module.exports = {
     },
   ],
   flags: {
-    DEV_SSR: false,
+    // DEV_SSR: false,
   },
 }

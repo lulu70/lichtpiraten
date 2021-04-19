@@ -26,7 +26,7 @@ const Artwork = ({ data }) => {
           images={galleriesImages[currentGalleryIndex]}
           overlayImage={overlayImage}
         />
-        <div className="flex justify-center space-x-4">
+        <div className="flex justify-center space-x-8">
           <button
             className={`text-sm ${
               isFirstImage ? "text-gray-700" : "text-current"

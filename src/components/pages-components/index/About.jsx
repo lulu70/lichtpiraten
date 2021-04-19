@@ -21,7 +21,9 @@ const About = ({ data }) => {
       [INLINES.HYPERLINK]: (node, children) => (
         <Link
           to={node.data.uri}
-          className={`text-accent ${getClassNamesByTabIsUsedState(tabIsUsed)}`}
+          className={`text-accent inline-block mt-2 ${getClassNamesByTabIsUsedState(
+            tabIsUsed
+          )}`}
         >
           {children}
         </Link>
@@ -36,7 +38,7 @@ const About = ({ data }) => {
       >
         <Container className="relative">
           <h2>{title}</h2>
-          <div className="max-w-3xl ml-auto text-white mt-4 space-y-2">
+          <div className="max-w-3xl ml-auto text-white mt-4 space-y-4">
             {renderRichText(body, richTextOptions)}
           </div>
         </Container>

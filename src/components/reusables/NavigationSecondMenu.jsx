@@ -87,7 +87,7 @@ const NavigationSecondMenu = ({ className, mainNavIsOpen }) => {
               <Link
                 key={id}
                 to={slug}
-                className={`block text-gray-400 ${
+                className={`block text-gray-300 ${
                   index > 0 && "mt-2"
                 } hover:text-white`}
               >

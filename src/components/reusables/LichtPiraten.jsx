@@ -1,7 +1,7 @@
 import React from "react"
 import { convertToBgImage } from "gbimage-bridge"
 import BackgroundImage from "gatsby-background-image"
-import { getImage } from "gatsby-plugin-image"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Container from "./Container"
 
 const LichtPiraten = ({ data }) => {
@@ -11,10 +11,22 @@ const LichtPiraten = ({ data }) => {
   return (
     <section id="LichtPiraten">
       <BackgroundImage
-        className="py-36 text-xl font-light relative text-center bg-fixed"
+        className="text-xl font-light relative text-center bg-fixed"
         {...bgImage}
       >
-        <Container>{text}</Container>
+        {/* mobile only image */}
+        <div className="absolute inset-0 lg:hidden">
+          <GatsbyImage
+            image={image}
+            alt={backgroundImage.title}
+            className="h-full"
+          />
+        </div>
+        {/* mobile only image */}
+
+        <Container className="relative py-36">
+          <span className="bg-black bg-opacity-80 p-2">{text}</span>
+        </Container>
       </BackgroundImage>
     </section>
   )

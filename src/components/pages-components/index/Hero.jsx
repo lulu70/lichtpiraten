@@ -23,7 +23,7 @@ const Hero = ({ data }) => {
   }
   return (
     <section id="hero" className="relative">
-      <Container className="my-96">
+      <Container className="my-12 lg:my-96 text-center lg:text-right">
         <div
           ref={imageContainerRef}
           className="mx-auto w-36 relative"
@@ -34,12 +34,10 @@ const Hero = ({ data }) => {
             alt={heroSection.icon.title}
           />
         </div>
-        <h1 className="text-7xl text-right font-bold mt-12 block">
+        <h1 className="text-5xl lg:text-7xl font-bold mt-12 block">
           {heroSection.title}
         </h1>
-        <p className="text-right mt-4 text-xl font-light">
-          {heroSection.subtitle}
-        </p>
+        <p className="mt-4 text-xl font-light">{heroSection.subtitle}</p>
       </Container>
     </section>
   )

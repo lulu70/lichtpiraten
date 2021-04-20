@@ -22,7 +22,7 @@ export default function Home({ data }) {
             alt={bgImage.image.title}
             objectFit="cover"
             objectPosition="left"
-            className="w-full"
+            className="w-full h-full"
           />
         </div>
         <Hero data={data} />

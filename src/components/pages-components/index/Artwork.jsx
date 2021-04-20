@@ -17,7 +17,7 @@ const Artwork = ({ data }) => {
   const isFirstImage = currentGalleryIndex === 0
   const isLastImage = currentGalleryIndex === galleriesImages.length - 1
   return (
-    <section id="ARTWORKS" className="relative bg-black text-gray-400 py-12">
+    <section id="ARTWORKS" className="relative bg-black text-gray-300 py-12">
       <Container>
         <h2 className="text-xl text-center">{title}</h2>
         <Divider />

@@ -63,10 +63,10 @@ const Footer = () => {
     ),
   }
   return (
-    <footer className="mt-auto pb-5 relative bg-black py-8 text-center text-gray-400">
+    <footer className="mt-auto pb-5 relative bg-black py-8 text-center text-gray-300">
       <Container>
         <div className="flex items-center">
-          <div className="w-5/12 border-t border-gray-400" />
+          <div className="w-5/12 border-t border-gray-300" />
           <div className="w-2/12 flex">
             <GatsbyImage
               image={getImage(yellowDuck)}
@@ -74,7 +74,7 @@ const Footer = () => {
               className="w-7 mx-auto"
             />
           </div>
-          <div className="w-5/12 border-t border-gray-400" />
+          <div className="w-5/12 border-t border-gray-300" />
         </div>
         {messages[location.pathname]}
       </Container>

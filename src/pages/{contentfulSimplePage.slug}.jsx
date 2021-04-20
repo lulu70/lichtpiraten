@@ -25,7 +25,7 @@ const SimplePageTemplate = ({ data }) => {
         </a>
       ),
       [BLOCKS.HEADING_1]: (node, children) => (
-        <h1 className="text-7xl text-center font-bold text-white">
+        <h1 className="text-5xl lg:text-7xl text-center font-bold text-white">
           {children}
         </h1>
       ),
@@ -40,7 +40,7 @@ const SimplePageTemplate = ({ data }) => {
       <SEO title={title} />
       <Layout>
         <section id="main">
-          <Container className="py-12 font-light text-gray-400">
+          <Container className="py-12 font-light text-gray-300">
             <p className="text-center text-xl">{title}</p>
             <Divider />
             <div className="mt-12 space-y-8">

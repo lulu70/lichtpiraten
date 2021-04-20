@@ -1,5 +1,5 @@
 import React from "react"
-import { getImage } from "gatsby-plugin-image"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { renderRichText } from "gatsby-source-contentful/rich-text"
 import { INLINES } from "@contentful/rich-text-types"
 import Container from "../../reusables/Container"
@@ -34,8 +34,18 @@ const About = ({ data }) => {
     <section id="about">
       <BackgroundImage
         {...bgImage}
-        className="relative text-right text-gray-400 py-12 text-xl font-light bg-fixed bg-right-top"
+        className="relative text-right text-gray-300 py-12 text-xl font-light bg-fixed bg-right-top"
       >
+        {/* mobile only image */}
+        <div className="absolute inset-0 lg:hidden">
+          <GatsbyImage
+            image={image}
+            alt={backgroundImage.title}
+            className="h-full"
+          />
+        </div>
+        {/* mobile only image */}
+
         <Container className="relative">
           <h2>{title}</h2>
           <div className="max-w-3xl ml-auto text-white mt-4 space-y-4">

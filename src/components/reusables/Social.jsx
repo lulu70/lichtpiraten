@@ -55,7 +55,7 @@ const Social = () => {
           General Enquiries
         </li>
       </ul>
-      <h4 className="text-xl font-light mt-24">GET SOCIAL</h4>
+      <h4 className="text-xl font-light mt-8 lg:mt-24">GET SOCIAL</h4>
       <ul className="mt-4 font-light flex">
         <li className="border p-2">
           <a

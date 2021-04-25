@@ -23,6 +23,7 @@ export default function Home({ data }) {
             objectFit="cover"
             objectPosition="left"
             className="w-full h-full"
+            loading="eager"
           />
         </div>
         <Hero data={data} />

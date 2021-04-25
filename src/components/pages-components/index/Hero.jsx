@@ -32,6 +32,7 @@ const Hero = ({ data }) => {
           <GatsbyImage
             image={getImage(heroSection.icon.localFile)}
             alt={heroSection.icon.title}
+            loading="eager"
           />
         </div>
         <h1 className="text-5xl lg:text-7xl font-bold mt-12 block">

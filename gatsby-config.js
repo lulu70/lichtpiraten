@@ -39,12 +39,16 @@ module.exports = {
     },
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-image`,
+
+    // ↓ ↓ ↓ path for the webpack-bundle-analyser-v2 after build: '/report.html' ↓ ↓ ↓
+    // ↓ ↓ ↓ path for the gatsby-plugin-perf-budgets after build: '/_report.html' ↓ ↓ ↓
     {
       resolve: `gatsby-plugin-webpack-bundle-analyser-v2`,
       options: {
         analyzerMode: "static",
       },
     },
+    `gatsby-plugin-perf-budgets`,
     `gatsby-plugin-postcss`,
     `gatsby-plugin-advanced-sitemap`,
     // {

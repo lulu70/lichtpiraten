@@ -68,6 +68,7 @@ const ContactForm = props => {
       <div className="space-y-5 mt-5">
         <label className="block" htmlFor="full-name">
           <input type="hidden" name="form-name" value="contact" />
+          <span className="sr-only">Full name: </span>
           <input
             type="text"
             placeholder="John Doe"
@@ -78,6 +79,7 @@ const ContactForm = props => {
           />
         </label>
         <label className="block" htmlFor="email">
+          <span className="sr-only">Email address</span>
           <input
             id="email"
             type="email"
@@ -88,6 +90,7 @@ const ContactForm = props => {
           />
         </label>
         <label className="block" htmlFor="message">
+          <span className="sr-only">Your Message</span>
           <textarea
             id="message"
             placeholder="Your message goes here..."
